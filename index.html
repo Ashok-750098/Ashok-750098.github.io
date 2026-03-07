@@ -940,7 +940,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Custom Analytics Tracking System (Invisible Behavioral Tracking)
   // IMPORTANT: Replace the URL below with your actual Google Apps Script Web App URL!
-  const TRACKING_URL = "YOUR_WEB_APP_URL_HERE"; 
+  const TRACKING_URL = "https://script.google.com/macros/s/AKfycbzbFu2Qhez1F6f1StmLhhmkhc8W3r20kb2JYpJdsGEt6s_WLLMfBTTR-5z2EuHvOofF/exec"; 
 
   function sendAnalytics(eventType, actionDetail) {
     const payload = {
@@ -950,7 +950,7 @@ document.addEventListener('DOMContentLoaded', () => {
       screenSize: window.innerWidth + "x" + window.innerHeight
     };
 
-    if(TRACKING_URL !== "YOUR_WEB_APP_URL_HERE") {
+    if(TRACKING_URL !== "https://script.google.com/macros/s/AKfycbzbFu2Qhez1F6f1StmLhhmkhc8W3r20kb2JYpJdsGEt6s_WLLMfBTTR-5z2EuHvOofF/exec") {
       fetch(TRACKING_URL, {
         method: 'POST',
         mode: 'no-cors', 
