@@ -697,19 +697,19 @@ footer {
 
       <div class="project-card">
         <div class="project-image">
-          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop" alt="School Operations Dashboard">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop" alt="Enterprise Operations Command Center">
         </div>
         <div class="project-content">
-          <h3 class="project-title">School Operations Command Center</h3>
+          <h3 class="project-title">Enterprise Ops Command Center</h3>
           <div class="project-meta">
-            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Enterprise Operations</span></div>
-            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Leadership needed a unified view of staff attendance, transport delays, and compliance issues.</span></div>
-            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Developed a comprehensive macro-level BI dashboard consolidating multi-campus data via APIs.</span></div>
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Enterprise Operations & Academics</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Leadership needed a unified view of staff attendance, transport delays, and school-wide compliance.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Developed a macro-level BI dashboard consolidating multi-campus data via APIs into an executive summary.</span></div>
           </div>
           <div class="project-tools">
             <span class="tool-tag">Power BI</span>
             <span class="tool-tag">ERP API</span>
-            <span class="tool-tag">Data Aggregation</span>
+            <span class="tool-tag">Executive Strategy</span>
           </div>
           <div class="project-actions">
             <a href="Overall_School_Dashboard.pdf" target="_blank" class="btn btn-secondary">View Dashboard (PDF)</a>
@@ -759,6 +759,28 @@ footer {
           <div class="project-actions">
             <a href="Finance_Dashboard.pdf" target="_blank" class="btn btn-secondary">View Finance</a>
             <a href="Stock_Consumption.pdf" target="_blank" class="btn btn-secondary">View Stock</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop" alt="Comprehensive Operations Summary">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Comprehensive Operations Summary</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Cross-Campus Operations</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Need for a centralized, daily operational digest summarizing housekeeping, security, and infrastructure across all locations.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Designed a robust Google Sheets reporting architecture that aggregates multi-branch daily inputs into a single executive snapshot.</span></div>
+          </div>
+          <div class="project-tools">
+            <span class="tool-tag">Data Aggregation</span>
+            <span class="tool-tag">Google Sheets</span>
+            <span class="tool-tag">Automated Summaries</span>
+          </div>
+          <div class="project-actions">
+            <a href="Operations_Summary.pdf" target="_blank" class="btn btn-secondary">View Summary (PDF)</a>
           </div>
         </div>
       </div>
@@ -904,6 +926,7 @@ footer {
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  // 1. Existing Fade-in Animation Logic
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
@@ -914,6 +937,49 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // 2. Custom Analytics Tracking System (Invisible Behavioral Tracking)
+  // IMPORTANT: Replace the URL below with your actual Google Apps Script Web App URL!
+  const TRACKING_URL = "YOUR_WEB_APP_URL_HERE"; 
+
+  function sendAnalytics(eventType, actionDetail) {
+    const payload = {
+      eventType: eventType,
+      actionDetail: actionDetail,
+      deviceInfo: navigator.userAgent,
+      screenSize: window.innerWidth + "x" + window.innerHeight
+    };
+
+    if(TRACKING_URL !== "YOUR_WEB_APP_URL_HERE") {
+      fetch(TRACKING_URL, {
+        method: 'POST',
+        mode: 'no-cors', 
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      }).catch(err => console.log("Analytics ping failed silently"));
+    }
+  }
+
+  // Log initial page view silently
+  setTimeout(() => {
+    sendAnalytics("Page_View", "User landed on portfolio homepage");
+  }, 1500); 
+
+  // Log specific button clicks silently
+  const buttons = document.querySelectorAll('.btn, a');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      const buttonText = this.innerText || this.textContent;
+      let targetHref = this.getAttribute('href');
+      
+      if(buttonText && targetHref && !targetHref.startsWith('#')) {
+        let action = `Clicked: [${buttonText.trim()}] -> pointing to: ${targetHref}`;
+        sendAnalytics("Button_Click", action);
+      }
+    });
+  });
 });
 </script>
 
