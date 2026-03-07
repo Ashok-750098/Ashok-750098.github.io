@@ -443,7 +443,6 @@ header {
 }
 
 .automation-icon {
-  color: var(--color-accent);
   margin-bottom: 1rem;
 }
 
@@ -488,8 +487,21 @@ header {
 
 .contact-content {
   text-align: center;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
+}
+
+.contact-actions-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 footer {
@@ -529,6 +541,7 @@ footer {
   .section { padding: 4rem 0; }
   .projects-grid { grid-template-columns: 1fr; }
   .hero-image-container { width: 280px; height: 280px; }
+  .contact-links { flex-direction: column; width: 100%; }
 }
 </style>
 </head>
@@ -640,7 +653,7 @@ footer {
 
       <div class="project-card">
         <div class="project-image">
-          <img src="project1.jpg" alt="Marketing Dashboard" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%2318181b\'/></svg>'">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Marketing Dashboard">
         </div>
         <div class="project-content">
           <h3 class="project-title">Marketing & Conversion Analytics</h3>
@@ -662,7 +675,7 @@ footer {
 
       <div class="project-card">
         <div class="project-image">
-          <img src="project2.jpg" alt="Ameyo Dashboard" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%2318181b\'/></svg>'">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Ameyo Dashboard">
         </div>
         <div class="project-content">
           <h3 class="project-title">Telecalling & Counselor Analytics</h3>
@@ -684,7 +697,7 @@ footer {
 
       <div class="project-card">
         <div class="project-image">
-          <img src="project3.jpg" alt="School Operations Dashboard" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%2318181b\'/></svg>'">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop" alt="School Operations Dashboard">
         </div>
         <div class="project-content">
           <h3 class="project-title">School Operations Command Center</h3>
@@ -706,7 +719,7 @@ footer {
 
       <div class="project-card">
         <div class="project-image">
-          <img src="project4.jpg" alt="Operations Summaries" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%2318181b\'/></svg>'">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop" alt="Operations Summaries">
         </div>
         <div class="project-content">
           <h3 class="project-title">Multi-Domain Ops & Audit Trackers</h3>
@@ -729,7 +742,7 @@ footer {
 
       <div class="project-card">
         <div class="project-image">
-          <img src="project5.jpg" alt="Finance and Inventory" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%2318181b\'/></svg>'">
+          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop" alt="Finance and Inventory">
         </div>
         <div class="project-content">
           <h3 class="project-title">Financial Realization & Stock Analytics</h3>
@@ -752,7 +765,7 @@ footer {
 
       <div class="project-card">
         <div class="project-image">
-          <img src="project6.jpg" alt="TGS Operations Portal" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%2318181b\'/></svg>'">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" alt="TGS Operations Portal">
         </div>
         <div class="project-content">
           <h3 class="project-title">Enterprise Operations Portal</h3>
@@ -774,7 +787,7 @@ footer {
 
       <div class="project-card">
         <div class="project-image">
-          <img src="project7.jpg" alt="School Information Portal" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%2318181b\'/></svg>'">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop" alt="School Information Portal">
         </div>
         <div class="project-content">
           <h3 class="project-title">Centralized Information Portal</h3>
@@ -815,7 +828,7 @@ footer {
     
     <div class="automations-grid">
       <div class="automation-card">
-        <div class="automation-icon" style="font-weight: 700; font-size: 1.5rem;">ETL</div>
+        <div class="automation-icon" style="font-size: 2rem;">⚡</div>
         <div class="automation-details">
           <h4>Automated Data Pipelines</h4>
           <p>Scripts that automatically extract, clean, and standardize raw data outputs from internal ERPs into structured datasets ready for BI consumption, eliminating daily manual pasting and data silos.</p>
@@ -823,7 +836,7 @@ footer {
       </div>
       
       <div class="automation-card">
-        <div class="automation-icon" style="font-weight: 700; font-size: 1.5rem;">MIS</div>
+        <div class="automation-icon" style="font-size: 2rem;">📧</div>
         <div class="automation-details">
           <h4>Scheduled Email Reporting</h4>
           <p>Custom Google Apps Script triggers that compile daily and weekly performance metrics (e.g., support tickets, calling audits) and dispatch formatted HTML email summaries directly to leadership.</p>
@@ -831,7 +844,7 @@ footer {
       </div>
       
       <div class="automation-card">
-        <div class="automation-icon" style="font-weight: 700; font-size: 1.5rem;">OPS</div>
+        <div class="automation-icon" style="font-size: 2rem;">⚙️</div>
         <div class="automation-details">
           <h4>Ticketing & Support Triage</h4>
           <p>Automated categorization of incoming support concerns (Academic, ERP, Transport, Infrastructure), calculating real-time resolution percentages to enforce SLAs across departments.</p>
@@ -866,11 +879,20 @@ footer {
   <div class="container fade-in contact-content">
     <h2 class="section-title">Initiate a Discussion</h2>
     <p class="section-subtitle" style="margin: 0 auto 2rem auto;">Available for conversations regarding BI development, data engineering, and transitioning raw operational metrics into scalable reporting infrastructures.</p>
-    <a href="mailto:ashoksinghb04@gmail.com" class="btn btn-primary">ashoksinghb04@gmail.com</a>
-    <div class="contact-links">
-      <a href="https://linkedin.com/in/ashoksingh-" target="_blank" class="btn btn-secondary">LinkedIn</a>
-      <a href="https://github.com/Ashok-750098" target="_blank" class="btn btn-secondary">GitHub</a>
+    
+    <div class="contact-actions-wrapper">
+      <div style="color: var(--color-text-muted); font-size: 1.125rem;">
+        📍 Delhi, IND
+      </div>
+      
+      <a href="mailto:ashoksinghb04@gmail.com" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">ashoksinghb04@gmail.com</a>
+      
+      <div class="contact-links">
+        <a href="https://linkedin.com/in/ashoksingh-" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+        <a href="https://github.com/Ashok-750098" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+      </div>
     </div>
+
   </div>
 </section>
 
