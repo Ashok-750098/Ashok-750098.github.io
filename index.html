@@ -4,17 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ashok Singh | Data & Business Analyst</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --color-bg: #ffffff;
-  --color-surface: #f8fafc;
-  --color-text-main: #0f172a;
-  --color-text-muted: #475569;
-  --color-accent: #1e40af;
-  --color-accent-hover: #1e3a8a;
-  --color-border: #e2e8f0;
-  --transition-standard: all 0.3s ease;
+  --color-bg: #09090b;
+  --color-surface: rgba(24, 24, 27, 0.6);
+  --color-surface-hover: rgba(39, 39, 42, 0.8);
+  --color-text-main: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-accent: #38bdf8;
+  --color-accent-secondary: #818cf8;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --transition-standard: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -25,7 +26,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   color: var(--color-text-main);
   background-color: var(--color-bg);
   line-height: 1.6;
@@ -33,6 +34,9 @@ html {
 
 body {
   overflow-x: hidden;
+  background-image: radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.05), transparent 25%),
+                    radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.05), transparent 25%);
+  background-attachment: fixed;
 }
 
 a {
@@ -47,43 +51,30 @@ ul {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
 .section {
-  padding: 6rem 0;
-}
-
-.section-surface {
-  background-color: var(--color-surface);
-}
-
-.section-dark {
-  background-color: var(--color-text-main);
-  color: var(--color-bg);
-}
-
-.section-dark .section-title {
-  color: var(--color-bg);
-}
-
-.section-dark .section-subtitle {
-  color: #94a3b8;
+  padding: 7rem 0;
+  position: relative;
 }
 
 .section-title {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
+  background: linear-gradient(to right, var(--color-text-main), var(--color-text-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-subtitle {
   font-size: 1.125rem;
   color: var(--color-text-muted);
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   max-width: 700px;
 }
 
@@ -91,41 +82,37 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.9375rem;
   font-weight: 500;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   transition: var(--transition-standard);
   border: 1px solid transparent;
+  backdrop-filter: blur(10px);
 }
 
 .btn-primary {
-  background-color: var(--color-text-main);
-  color: var(--color-bg);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary));
+  color: #000;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-accent);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background-color: transparent;
+  background-color: var(--color-surface);
   color: var(--color-text-main);
-  border-color: var(--color-text-main);
+  border-color: var(--color-border);
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-surface);
-}
-
-.btn-accent {
-  background-color: var(--color-accent);
-  color: var(--color-bg);
-}
-
-.btn-accent:hover {
-  background-color: var(--color-accent-hover);
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
 header {
@@ -133,8 +120,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
+  background-color: rgba(9, 9, 11, 0.8);
+  backdrop-filter: blur(12px);
   z-index: 1000;
   border-bottom: 1px solid var(--color-border);
 }
@@ -143,22 +130,27 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4.5rem;
+  height: 5rem;
 }
 
 .logo {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--color-text-main);
+}
+
+.logo span {
+  color: var(--color-accent);
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav-links a {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 500;
   color: var(--color-text-muted);
 }
@@ -171,13 +163,13 @@ header {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 4.5rem;
+  padding-top: 5rem;
 }
 
 .hero-layout {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 5rem;
   width: 100%;
 }
 
@@ -185,15 +177,50 @@ header {
   flex: 1;
 }
 
+.hero-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgba(56, 189, 248, 0.1);
+  color: var(--color-accent);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-summary {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
 .hero-image-container {
   flex-shrink: 0;
-  width: 320px;
-  height: 320px;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid var(--color-surface);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  background-color: var(--color-border); /* Fallback color */
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 50px rgba(56, 189, 248, 0.15);
+  position: relative;
+}
+
+.hero-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
 }
 
 .hero-image-container img {
@@ -202,31 +229,9 @@ header {
   object-fit: cover;
 }
 
-.hero-title {
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-}
-
-.hero-subtitle {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--color-accent);
-  margin-bottom: 1.5rem;
-}
-
-.hero-summary {
-  font-size: 1.125rem;
-  color: var(--color-text-muted);
-  margin-bottom: 3rem;
-  max-width: 600px;
-}
-
 .hero-actions {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .about-grid {
@@ -248,47 +253,67 @@ header {
 }
 
 .skill-card {
-  background-color: var(--color-bg);
-  padding: 2rem;
+  background-color: var(--color-surface);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
   border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border-radius: 12px;
   transition: var(--transition-standard);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
 }
 
 .skill-card:hover {
-  border-color: var(--color-accent);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
-  transform: translateY(-2px);
+  transform: translateY(-5px);
+  background-color: var(--color-surface-hover);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.skill-card:hover::before {
+  transform: translateX(100%);
 }
 
 .skill-card h3 {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .skill-list li {
   font-size: 0.9375rem;
   color: var(--color-text-muted);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
 }
 
 .skill-list li::before {
-  content: "•";
+  content: "▹";
   color: var(--color-accent);
-  font-weight: bold;
   margin-right: 0.75rem;
+  font-size: 1.2rem;
 }
 
 .disclaimer-banner {
-  background-color: #f1f5f9;
+  background-color: rgba(56, 189, 248, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.2);
   border-left: 4px solid var(--color-accent);
-  padding: 1rem 1.5rem;
-  margin-bottom: 3rem;
-  border-radius: 0 4px 4px 0;
-  font-size: 0.875rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 3.5rem;
+  border-radius: 6px;
+  font-size: 0.9375rem;
   color: var(--color-text-muted);
 }
 
@@ -299,9 +324,10 @@ header {
 }
 
 .project-card {
-  background-color: var(--color-bg);
+  background-color: var(--color-surface);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -309,28 +335,31 @@ header {
 }
 
 .project-card:hover {
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   border-color: var(--color-accent);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
 .project-image {
   width: 100%;
-  height: 220px;
-  background-color: var(--color-surface);
+  height: 240px;
+  background-color: #000;
   border-bottom: 1px solid var(--color-border);
   overflow: hidden;
+  position: relative;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.7s ease;
+  opacity: 0.8;
 }
 
 .project-card:hover .project-image img {
   transform: scale(1.05);
+  opacity: 1;
 }
 
 .project-content {
@@ -341,7 +370,7 @@ header {
 }
 
 .project-title {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -355,12 +384,12 @@ header {
 }
 
 .meta-item {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
 }
 
 .meta-label {
   font-weight: 600;
-  color: var(--color-text-main);
+  color: var(--color-accent);
   display: inline-block;
   margin-right: 0.25rem;
 }
@@ -377,12 +406,12 @@ header {
 }
 
 .tool-tag {
-  background-color: var(--color-surface);
-  color: var(--color-text-main);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-muted);
   font-size: 0.75rem;
   font-weight: 500;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
   border: 1px solid var(--color-border);
 }
 
@@ -392,7 +421,6 @@ header {
   margin-top: auto;
 }
 
-/* Micro Automations */
 .automations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -400,40 +428,31 @@ header {
 }
 
 .automation-card {
-  background-color: var(--color-bg);
+  background-color: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 6px;
-  padding: 1.5rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+  border-radius: 12px;
+  padding: 2rem;
   transition: var(--transition-standard);
 }
 
 .automation-card:hover {
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-secondary);
+  background-color: var(--color-surface-hover);
 }
 
 .automation-icon {
-  width: 40px;
-  height: 40px;
-  background-color: var(--color-surface);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
+  font-size: 2rem;
   color: var(--color-accent);
-  flex-shrink: 0;
+  margin-bottom: 1rem;
 }
 
 .automation-details h4 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
 }
 
 .automation-details p {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   color: var(--color-text-muted);
 }
 
@@ -441,16 +460,28 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
-  margin-top: 3rem;
 }
 
 .philosophy-item h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.philosophy-item h3::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
 }
 
 .philosophy-item p {
-  color: #94a3b8;
+  color: var(--color-text-muted);
   font-size: 1rem;
 }
 
@@ -460,24 +491,18 @@ header {
   margin: 0 auto;
 }
 
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
 footer {
   text-align: center;
-  padding: 2rem 0;
+  padding: 2.5rem 0;
   border-top: 1px solid var(--color-border);
   color: var(--color-text-muted);
   font-size: 0.875rem;
+  background-color: var(--color-bg);
 }
 
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
@@ -487,23 +512,22 @@ footer {
 }
 
 @media (max-width: 992px) {
-  .hero-layout { flex-direction: column-reverse; text-align: center; gap: 2rem; }
+  .hero-layout { flex-direction: column-reverse; text-align: center; gap: 3rem; }
   .hero-summary { margin: 0 auto 3rem auto; }
   .hero-actions { justify-content: center; }
-  .hero-title { font-size: 3rem; }
+  .hero-title { font-size: 3.5rem; }
   .about-grid { grid-template-columns: 1fr; }
   .philosophy-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  .hero-title { font-size: 2.5rem; }
-  .hero-subtitle { font-size: 1.25rem; }
+  .hero-title { font-size: 2.75rem; }
   .hero-actions { flex-direction: column; }
   .project-actions { flex-direction: column; }
-  .section { padding: 4rem 0; }
+  .section { padding: 5rem 0; }
   .projects-grid { grid-template-columns: 1fr; }
-  .hero-image-container { width: 240px; height: 240px; }
+  .hero-image-container { width: 280px; height: 280px; }
 }
 </style>
 </head>
@@ -511,13 +535,12 @@ footer {
 
 <header>
   <div class="container nav-container">
-    <a href="#" class="logo">Ashok Singh.</a>
+    <a href="#" class="logo">Ashok<span>.</span></a>
     <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#projects">Portfolios</a>
-      <a href="#automations">Scripts</a>
-      <a href="#philosophy">Philosophy</a>
+      <a href="#portfolios">Portfolios</a>
+      <a href="#scripts">Scripts</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -526,29 +549,29 @@ footer {
 <section class="hero container fade-in" id="hero">
   <div class="hero-layout">
     <div class="hero-content">
-      <h1 class="hero-title">Engineering Data for Strategic Visibility</h1>
-      <h2 class="hero-subtitle">Data & Business Analyst</h2>
+      <div class="hero-badge">Data & Business Analytics</div>
+      <h1 class="hero-title">Engineering Data for Strategic Visibility.</h1>
       <p class="hero-summary">I manage and streamline complete data ecosystems. From extracting raw API data to building automated ETL pipelines and deploying interactive Power BI dashboards, I transition organizations from manual reporting to real-time analytics.</p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View Analytics Portfolio</a>
+        <a href="#portfolios" class="btn btn-primary">View Analytics Portfolio</a>
         <a href="Ashok_Resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
       </div>
     </div>
     <div class="hero-image-container">
-      <img src="profile.jpg" alt="Ashok Singh" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'320\' height=\'320\'><rect width=\'320\' height=\'320\' fill=\'%23e2e8f0\'/></svg>'">
+      <img src="profile.jpg" alt="Ashok Singh" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'380\' height=\'380\'><rect width=\'380\' height=\'380\' fill=\'%2318181b\'/></svg>'">
     </div>
   </div>
 </section>
 
-<section class="section section-surface" id="about">
+<section class="section" id="about">
   <div class="container fade-in">
-    <h2 class="section-title">Professional Overview</h2>
+    <h2 class="section-title">System Architecture & Intelligence</h2>
     <p class="section-subtitle">Bridging the gap between raw, fragmented data and executive decision-making.</p>
     <div class="about-grid">
       <div class="about-text">
-        <p>As a Business Analyst, I am responsible for managing the complete data lifecycle across multiple operational verticals. My core expertise lies in data collection, cleaning, and transformation to support strategic decision-making.</p>
+        <p>As a Business Analyst, I am responsible for managing the complete data lifecycle across multiple operational verticals—from Admissions and Marketing to Finance and Campus Operations. My core expertise lies in data collection, cleaning, and transformation to support strategic decision-making.</p>
         <p>I architect automated data pipelines that extract and consolidate information from ERP systems, APIs, and disparate spreadsheets into centralized reporting databases. By identifying inefficiencies in manual workflows, I deploy Google Apps Script solutions that reduce reporting effort by up to 60%.</p>
-        <p>Beyond data wrangling, I design and maintain comprehensive Power BI dashboards. By defining strict KPIs and aligning metrics with business requirements, I ensure leadership, finance, marketing, and operations teams have real-time visibility into their performance.</p>
+        <p>Beyond data wrangling, I design and maintain comprehensive Power BI dashboards. By defining strict KPIs and aligning metrics with business requirements, I ensure leadership teams have real-time visibility into their performance, preparing the ground for advanced predictive modeling.</p>
       </div>
     </div>
   </div>
@@ -557,26 +580,36 @@ footer {
 <section class="section" id="skills">
   <div class="container fade-in">
     <h2 class="section-title">Technical Expertise</h2>
-    <p class="section-subtitle">Core competencies in analytics, visualization, and process automation.</p>
+    <p class="section-subtitle">Core competencies in analytics, machine learning, and process automation.</p>
     <div class="skills-grid">
       <div class="skill-card">
         <h3>Analytics & BI Tools</h3>
         <ul class="skill-list">
           <li>Power BI Dashboard Design</li>
           <li>SQL Database Querying</li>
-          <li>Python (Data Analysis)</li>
           <li>Advanced Microsoft Excel</li>
           <li>Google Sheets Query & Logic</li>
+          <li>KPI Design & Tracking</li>
         </ul>
       </div>
       <div class="skill-card">
-        <h3>Data Management</h3>
+        <h3>Data Science & ML</h3>
         <ul class="skill-list">
-          <li>Data Cleaning & Transformation</li>
-          <li>ETL Pipeline Construction</li>
-          <li>Relational Data Modeling</li>
-          <li>API Data Integration</li>
+          <li>Python (Pandas, NumPy)</li>
+          <li>Machine Learning Algorithms</li>
+          <li>Natural Language Processing (NLP)</li>
           <li>Exploratory Data Analysis (EDA)</li>
+          <li>Jupyter Notebooks</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Engineering & Cloud</h3>
+        <ul class="skill-list">
+          <li>AWS & Cloud Computing</li>
+          <li>Big Data Analytics (Spark)</li>
+          <li>ETL Pipeline Construction</li>
+          <li>API Data Integration</li>
+          <li>Git & Version Control</li>
         </ul>
       </div>
       <div class="skill-card">
@@ -589,24 +622,14 @@ footer {
           <li>Manual Process Optimization</li>
         </ul>
       </div>
-      <div class="skill-card">
-        <h3>Business Intelligence</h3>
-        <ul class="skill-list">
-          <li>KPI Design & Tracking</li>
-          <li>Financial & Fee Realization</li>
-          <li>Marketing & Lead Conversion</li>
-          <li>Cross-functional MIS Reporting</li>
-          <li>Root Cause Analysis</li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
 
-<section class="section section-surface" id="projects">
+<section class="section" id="portfolios">
   <div class="container fade-in">
     <h2 class="section-title">Analytics & Development Portfolio</h2>
-    <p class="section-subtitle">A selection of BI dashboards, web portals, and operational reporting systems.</p>
+    <p class="section-subtitle">A selection of BI dashboards, web portals, and multi-domain operational reporting systems.</p>
     
     <div class="disclaimer-banner">
       <strong>Note on Data Privacy:</strong> All dashboards, KPIs, and reports linked below utilize anonymized, sample datasets to protect proprietary company information and maintain absolute confidentiality.
@@ -616,14 +639,14 @@ footer {
 
       <div class="project-card">
         <div class="project-image">
-          <img src="project1.jpg" alt="Marketing Dashboard" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%23e2e8f0\'/></svg>'">
+          <img src="project1.jpg" alt="Marketing Dashboard" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%2318181b\'/></svg>'">
         </div>
         <div class="project-content">
           <h3 class="project-title">Marketing & Conversion Analytics</h3>
           <div class="project-meta">
-            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Sales & Telecalling (Ameyo)</span></div>
-            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Fragmented tracking of lead walk-ins, digital campaign ROI, and counselor call performance.</span></div>
-            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Built a comprehensive Power BI model integrating call stats, disposition summaries, and CPL/CPT metrics.</span></div>
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Sales & Marketing</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Fragmented tracking of lead walk-ins and digital campaign ROI.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Built a Power BI model integrating lead discovery sources and CPL/CPT metrics.</span></div>
           </div>
           <div class="project-tools">
             <span class="tool-tag">Power BI</span>
@@ -631,21 +654,111 @@ footer {
             <span class="tool-tag">Sales KPIs</span>
           </div>
           <div class="project-actions">
-            <a href="Marketing_Dashboard_Sample.pdf" target="_blank" class="btn btn-secondary">View Dashboard (PDF)</a>
+            <a href="Gurukulam_marketing.pdf" target="_blank" class="btn btn-secondary">View Dashboard (PDF)</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
         <div class="project-image">
-          <img src="project2.png" alt="Operations Portal" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%23e2e8f0\'/></svg>'">
+          <img src="project2.jpg" alt="Ameyo Dashboard" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%2318181b\'/></svg>'">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Telecalling & Counselor Analytics</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Admissions (Ameyo Platform)</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Lack of visibility into counselor call volumes, effective connects, and lead dispositions.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Engineered a Power BI tracking suite analyzing talk times and walk-in conversion ratios.</span></div>
+          </div>
+          <div class="project-tools">
+            <span class="tool-tag">Power BI</span>
+            <span class="tool-tag">Performance Metrics</span>
+            <span class="tool-tag">ETL</span>
+          </div>
+          <div class="project-actions">
+            <a href="Ameyo_Dashboard.pdf" target="_blank" class="btn btn-secondary">View Dashboard (PDF)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="project3.jpg" alt="School Operations Dashboard" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%2318181b\'/></svg>'">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">School Operations Command Center</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Enterprise Operations</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Leadership needed a unified view of staff attendance, transport delays, and compliance issues.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Developed a comprehensive macro-level BI dashboard consolidating multi-campus data via APIs.</span></div>
+          </div>
+          <div class="project-tools">
+            <span class="tool-tag">Power BI</span>
+            <span class="tool-tag">ERP API</span>
+            <span class="tool-tag">Data Aggregation</span>
+          </div>
+          <div class="project-actions">
+            <a href="ERP_API.pdf" target="_blank" class="btn btn-secondary">View Dashboard (PDF)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="project4.jpg" alt="Operations Summaries" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%2318181b\'/></svg>'">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Multi-Domain Ops & Audit Trackers</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Housekeeping, Security & Support</span></div>
+            <div class="meta-item"><span class="meta-label">Expertise:</span> <span class="meta-value">Demonstrates advanced G-Sheet architecture to track compliance (e.g., Night Guard audits, ticketing SLAs).</span></div>
+            <div class="meta-item"><span class="meta-label">Outcome:</span> <span class="meta-value">Standardized reporting across distinct operational branches using unified spreadsheet logic.</span></div>
+          </div>
+          <div class="project-tools">
+            <span class="tool-tag">Advanced Sheets</span>
+            <span class="tool-tag">Logic Formulating</span>
+            <span class="tool-tag">Cross-functional</span>
+          </div>
+          <div class="project-actions">
+            <a href="ilovepdf_merged.pdf" target="_blank" class="btn btn-secondary">View Audits</a>
+            <a href="Support.pdf" target="_blank" class="btn btn-secondary">View Support</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="project5.jpg" alt="Finance and Inventory" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%2318181b\'/></svg>'">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Financial Realization & Stock Analytics</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Finance & Procurement</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Lack of immediate visibility into monthly fee dues and undocumented inventory consumption.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Engineered dynamic tracking sheets mapping item-wise consumption against financial payables.</span></div>
+          </div>
+          <div class="project-tools">
+            <span class="tool-tag">Financial KPIs</span>
+            <span class="tool-tag">Inventory Logic</span>
+            <span class="tool-tag">Data Visualization</span>
+          </div>
+          <div class="project-actions">
+            <a href="PWGS_Finance.pdf" target="_blank" class="btn btn-secondary">View Finance</a>
+            <a href="Stock_Consumption.pdf" target="_blank" class="btn btn-secondary">View Stock</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="image_5064eb.png" alt="TGS Operations Portal">
         </div>
         <div class="project-content">
           <h3 class="project-title">Enterprise Operations Portal</h3>
           <div class="project-meta">
-            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Administration & Logistics</span></div>
-            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Siloed management of transport utilization, housekeeping SLAs, and security audits.</span></div>
-            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Developed a unified, interactive web application leveraging AI insights for compliance risks (e.g., bus conductor tracking).</span></div>
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Administration Web App</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Siloed management of transport utilization and compliance risks.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Developed a unified, interactive web application serving AI insights for logistical compliance.</span></div>
           </div>
           <div class="project-tools">
             <span class="tool-tag">Apps Script</span>
@@ -653,21 +766,21 @@ footer {
             <span class="tool-tag">Web App Deployment</span>
           </div>
           <div class="project-actions">
-            <a href="https://script.google.com/macros/s/AKfycbxT9CR6UVnMM6eT9tFcfpWNy7fZjt1_1XvnlJ_olhGFai1K8lc_iuERRrImKSixUSSErg/exec" target="_blank" class="btn btn-primary">View Live Demo</a>
+            <a href="https://script.google.com/a/macros/pw.live/s/AKfycbyRroujxaYQy2o-cxaFVVW81uzR7hJ5bCTa0HSiBYq6/exec" target="_blank" class="btn btn-primary">View Live Demo</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
         <div class="project-image">
-          <img src="project3.jpg" alt="Information Portal" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%23e2e8f0\'/></svg>'">
+          <img src="image_50b743.jpg" alt="School Information Portal">
         </div>
         <div class="project-content">
           <h3 class="project-title">Centralized Information Portal</h3>
           <div class="project-meta">
             <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Internal Communications</span></div>
-            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Disjointed access to fee structures, academic calendars, curriculum PDFs, and standard operating procedures.</span></div>
-            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Architected a scalable internal portal serving as a single source of truth across multiple regional branches.</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Disjointed access to fees, academic calendars, and standard operating procedures.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Architected a scalable internal portal serving as a single source of truth across regional branches.</span></div>
           </div>
           <div class="project-tools">
             <span class="tool-tag">Google Apps Script</span>
@@ -675,51 +788,17 @@ footer {
             <span class="tool-tag">Document Management</span>
           </div>
           <div class="project-actions">
-            <a href="https://script.google.com/macros/s/AKfycbwL6aB_J4vN3iARM6-UXYtI8W1iXDRRiYKSjoKthnxsBUAG4riqKI_lJ0nMp6QMho5XzQ/exec" target="_blank" class="btn btn-primary">View Live Demo</a>
+            <a href="https://script.google.com/a/macros/pw.live/s/AKfycbzFJqbwmamuMFOCO6EiC6u91sps7j5jmoHHNCYhzKCe/exec" target="_blank" class="btn btn-primary">View Live Demo</a>
           </div>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-image">
-          <img src="project4.jpg" alt="Financial Dashboard" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%23e2e8f0\'/></svg>'">
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">Financial Realization Engine</h3>
-          <div class="project-meta">
-            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Finance & Revenue</span></div>
-            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Lack of immediate visibility into monthly/quarterly fee due statuses and overall collection percentages.</span></div>
-            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Engineered a dynamic tracking sheet utilizing complex queries to measure actuals vs. payables across new and old sessions.</span></div>
-          </div>
-          <div class="project-tools">
-            <span class="tool-tag">Advanced Sheets</span>
-            <span class="tool-tag">Financial KPIs</span>
-            <span class="tool-tag">Data Aggregation</span>
-          </div>
-          <div class="project-actions">
-            <a href="Finance_Dashboard_Sample.pdf" target="_blank" class="btn btn-secondary">View Case Study</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-image">
-          <img src="project5.jpg" alt="Inventory Tracker" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%23e2e8f0\'/></svg>'">
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">Stock Consumption Analytics</h3>
-          <div class="project-meta">
-            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Procurement & Inventory</span></div>
-            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Inefficient tracking of distributed assets leading to undocumented stockouts and capital leakage.</span></div>
-            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Designed automated dashboards highlighting the "Lowest 20 Stocks" and mapping item-wise consumption quantities against financial value.</span></div>
-          </div>
-          <div class="project-tools">
-            <span class="tool-tag">Data Transformation</span>
-            <span class="tool-tag">Inventory Logic</span>
-            <span class="tool-tag">Visualization</span>
-          </div>
-          <div class="project-actions">
-            <a href="Stock_Dashboard_Sample.pdf" target="_blank" class="btn btn-secondary">View Case Study</a>
+      <div class="project-card" style="border-style: dashed; background-color: transparent;">
+        <div class="project-content" style="justify-content: center; align-items: center; text-align: center;">
+          <h3 class="project-title" style="color: var(--color-text-muted);">Machine Learning Models</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9375rem;">Documentation for Predictive Demand (Linear Regression) and Loan Company Exploratory Data Analysis currently being finalized for deployment.</p>
+          <div class="project-tools" style="justify-content: center; margin-top: 1.5rem;">
+            <span class="tool-tag" style="border-color: var(--color-text-muted);">Coming Soon</span>
           </div>
         </div>
       </div>
@@ -728,14 +807,14 @@ footer {
   </div>
 </section>
 
-<section class="section" id="automations">
+<section class="section" id="scripts">
   <div class="container fade-in">
     <h2 class="section-title">Micro-Automations & Scripts</h2>
     <p class="section-subtitle">Solving everyday business bottlenecks through programmatic triggers and automated workflows.</p>
     
     <div class="automations-grid">
       <div class="automation-card">
-        <div class="automation-icon">ETL</div>
+        <div class="automation-icon">⚡</div>
         <div class="automation-details">
           <h4>Automated Data Pipelines</h4>
           <p>Scripts that automatically extract, clean, and standardize raw data outputs from internal ERPs into structured datasets ready for BI consumption, eliminating daily manual pasting.</p>
@@ -743,7 +822,7 @@ footer {
       </div>
       
       <div class="automation-card">
-        <div class="automation-icon">MIS</div>
+        <div class="automation-icon">📧</div>
         <div class="automation-details">
           <h4>Scheduled Email Reporting</h4>
           <p>Custom Google Apps Script triggers that compile daily and weekly performance metrics (e.g., support tickets, calling audits) and dispatch formatted HTML email summaries to leadership.</p>
@@ -751,32 +830,11 @@ footer {
       </div>
       
       <div class="automation-card">
-        <div class="automation-icon">OPS</div>
+        <div class="automation-icon">⚙️</div>
         <div class="automation-details">
           <h4>Ticketing & Support Triage</h4>
-          <p>Automated categorization of incoming support concerns (Academic, ERP, Transport, Infrastructure), calculating real-time resolution percentages to enforce SLAs.</p>
+          <p>Automated categorization of incoming support concerns, calculating real-time resolution percentages to enforce SLAs across departments.</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-dark" id="philosophy">
-  <div class="container fade-in">
-    <h2 class="section-title">Architecture Philosophy</h2>
-    <p class="section-subtitle">How I approach data systems.</p>
-    <div class="philosophy-grid">
-      <div class="philosophy-item">
-        <h3>01. Data Integrity</h3>
-        <p>Before writing a single line of visualization logic, I ensure the underlying pipeline is bulletproof. A dashboard is only as effective as the cleanliness and reliability of its source data.</p>
-      </div>
-      <div class="philosophy-item">
-        <h3>02. Automation First</h3>
-        <p>Manual intervention in reporting is a point of failure and a waste of analytical talent. I architect workflows that eliminate repetitive friction, ensuring data flows seamlessly from input to executive view.</p>
-      </div>
-      <div class="philosophy-item">
-        <h3>03. Actionable Clarity</h3>
-        <p>Data should answer questions, not create more. I design KPIs and interfaces that immediately highlight bottlenecks—whether in marketing spend or operational logistics—allowing leaders to pivot strategy instantly.</p>
       </div>
     </div>
   </div>
@@ -785,11 +843,11 @@ footer {
 <section class="section" id="contact">
   <div class="container fade-in contact-content">
     <h2 class="section-title">Initiate a Discussion</h2>
-    <p class="section-subtitle" style="margin: 0 auto 2rem auto;">Available for conversations regarding BI development, data-driven automation, and transitioning raw operational metrics into scalable reporting infrastructures.</p>
-    <a href="mailto:your.email@example.com" class="btn btn-accent">Contact Me</a>
+    <p class="section-subtitle" style="margin: 0 auto 2rem auto;">Available for conversations regarding BI development, data engineering, and transitioning raw operational metrics into scalable reporting infrastructures.</p>
+    <a href="mailto:ashoksinghb04@gmail.com" class="btn btn-primary">ashoksinghb04@gmail.com</a>
     <div class="contact-links">
-      <a href="https://linkedin.com/in/ashoksingh" target="_blank" class="btn btn-secondary">LinkedIn</a>
-      <a href="https://github.com/ashoksingh" target="_blank" class="btn btn-secondary">GitHub</a>
+      <a href="https://linkedin.com/in/ashoksingh-" target="_blank" class="btn btn-secondary">LinkedIn</a>
+      <a href="https://github.com/Ashok-750098" target="_blank" class="btn btn-secondary">GitHub</a>
     </div>
   </div>
 </section>
