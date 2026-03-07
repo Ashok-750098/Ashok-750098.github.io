@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashok Singh Bangari | Systems & Automation Designer</title>
+<title>Ashok Singh | Data & Business Analyst</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -11,8 +11,8 @@
   --color-surface: #f8fafc;
   --color-text-main: #0f172a;
   --color-text-muted: #475569;
-  --color-accent: #1e3a8a;
-  --color-accent-hover: #1e40af;
+  --color-accent: #1e40af;
+  --color-accent-hover: #1e3a8a;
   --color-border: #e2e8f0;
   --transition-standard: all 0.3s ease;
 }
@@ -83,8 +83,8 @@ ul {
 .section-subtitle {
   font-size: 1.125rem;
   color: var(--color-text-muted);
-  margin-bottom: 4rem;
-  max-width: 600px;
+  margin-bottom: 3rem;
+  max-width: 700px;
 }
 
 .btn {
@@ -174,8 +174,32 @@ header {
   padding-top: 4.5rem;
 }
 
+.hero-layout {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
 .hero-content {
-  max-width: 800px;
+  flex: 1;
+}
+
+.hero-image-container {
+  flex-shrink: 0;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--color-surface);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background-color: var(--color-border); /* Fallback color */
+}
+
+.hero-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-title {
@@ -188,16 +212,16 @@ header {
 
 .hero-subtitle {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--color-accent);
   margin-bottom: 1.5rem;
 }
 
 .hero-summary {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--color-text-muted);
   margin-bottom: 3rem;
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .hero-actions {
@@ -258,17 +282,27 @@ header {
   margin-right: 0.75rem;
 }
 
+.disclaimer-banner {
+  background-color: #f1f5f9;
+  border-left: 4px solid var(--color-accent);
+  padding: 1rem 1.5rem;
+  margin-bottom: 3rem;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .project-card {
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
-  border-radius: 6px;
-  padding: 2.5rem;
+  border-radius: 8px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: var(--transition-standard);
@@ -280,29 +314,55 @@ header {
   border-color: var(--color-accent);
 }
 
+.project-image {
+  width: 100%;
+  height: 220px;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .project-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .project-meta {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
   flex-grow: 1;
 }
 
 .meta-item {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
 }
 
 .meta-label {
   font-weight: 600;
   color: var(--color-text-main);
-  display: block;
-  margin-bottom: 0.25rem;
+  display: inline-block;
+  margin-right: 0.25rem;
 }
 
 .meta-value {
@@ -330,6 +390,51 @@ header {
   display: flex;
   gap: 1rem;
   margin-top: auto;
+}
+
+/* Micro Automations */
+.automations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.automation-card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: var(--transition-standard);
+}
+
+.automation-card:hover {
+  border-color: var(--color-accent);
+}
+
+.automation-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-surface);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.automation-details h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.automation-details p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
 }
 
 .philosophy-grid {
@@ -382,6 +487,9 @@ footer {
 }
 
 @media (max-width: 992px) {
+  .hero-layout { flex-direction: column-reverse; text-align: center; gap: 2rem; }
+  .hero-summary { margin: 0 auto 3rem auto; }
+  .hero-actions { justify-content: center; }
   .hero-title { font-size: 3rem; }
   .about-grid { grid-template-columns: 1fr; }
   .philosophy-grid { grid-template-columns: 1fr; }
@@ -391,11 +499,11 @@ footer {
   .nav-links { display: none; }
   .hero-title { font-size: 2.5rem; }
   .hero-subtitle { font-size: 1.25rem; }
-  .hero-summary { font-size: 1.125rem; }
   .hero-actions { flex-direction: column; }
   .project-actions { flex-direction: column; }
   .section { padding: 4rem 0; }
   .projects-grid { grid-template-columns: 1fr; }
+  .hero-image-container { width: 240px; height: 240px; }
 }
 </style>
 </head>
@@ -403,11 +511,12 @@ footer {
 
 <header>
   <div class="container nav-container">
-    <a href="#" class="logo">Ashok Singh Bangari.</a>
+    <a href="#" class="logo">Ashok Singh.</a>
     <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
+      <a href="#projects">Portfolios</a>
+      <a href="#automations">Scripts</a>
       <a href="#philosophy">Philosophy</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -415,26 +524,31 @@ footer {
 </header>
 
 <section class="hero container fade-in" id="hero">
-  <div class="hero-content">
-    <h1 class="hero-title">Engineering Clarity from Operational Complexity</h1>
-    <h2 class="hero-subtitle">Business Analyst | Systems & Automation Designer</h2>
-    <p class="hero-summary">Designing scalable operational workflows, automated reporting pipelines, and structured executive dashboards to transition organizations from reactive management to data-driven strategy.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#" class="btn btn-secondary">Download Resume</a>
+  <div class="hero-layout">
+    <div class="hero-content">
+      <h1 class="hero-title">Engineering Data for Strategic Visibility</h1>
+      <h2 class="hero-subtitle">Data & Business Analyst</h2>
+      <p class="hero-summary">I manage and streamline complete data ecosystems. From extracting raw API data to building automated ETL pipelines and deploying interactive Power BI dashboards, I transition organizations from manual reporting to real-time analytics.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Analytics Portfolio</a>
+        <a href="Ashok_Resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-image-container">
+      <img src="profile.jpg" alt="Ashok Singh" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'320\' height=\'320\'><rect width=\'320\' height=\'320\' fill=\'%23e2e8f0\'/></svg>'">
     </div>
   </div>
 </section>
 
 <section class="section section-surface" id="about">
   <div class="container fade-in">
-    <h2 class="section-title">About Me</h2>
-    <p class="section-subtitle">Bridging the gap between raw data and executive decision visibility.</p>
+    <h2 class="section-title">Professional Overview</h2>
+    <p class="section-subtitle">Bridging the gap between raw, fragmented data and executive decision-making.</p>
     <div class="about-grid">
       <div class="about-text">
-        <p>I am a Business Analyst focused on operational system design and process automation. My approach centers on structured systems thinking to build scalable workflows that eliminate manual redundancies and enforce data integrity.</p>
-        <p>By abstracting complex business operations into quantifiable metrics, I engineer robust MIS reporting structures and automated internal portals. I specialize in identifying bottlenecks across departments—from logistics to finance—and deploying technical solutions that standardize operations.</p>
-        <p>Currently, I am expanding my architecture focus to transition into advanced Data and AI-driven operational roles, building infrastructures that not only report on the present but model future efficiencies.</p>
+        <p>As a Business Analyst, I am responsible for managing the complete data lifecycle across multiple operational verticals. My core expertise lies in data collection, cleaning, and transformation to support strategic decision-making.</p>
+        <p>I architect automated data pipelines that extract and consolidate information from ERP systems, APIs, and disparate spreadsheets into centralized reporting databases. By identifying inefficiencies in manual workflows, I deploy Google Apps Script solutions that reduce reporting effort by up to 60%.</p>
+        <p>Beyond data wrangling, I design and maintain comprehensive Power BI dashboards. By defining strict KPIs and aligning metrics with business requirements, I ensure leadership, finance, marketing, and operations teams have real-time visibility into their performance.</p>
       </div>
     </div>
   </div>
@@ -442,47 +556,47 @@ footer {
 
 <section class="section" id="skills">
   <div class="container fade-in">
-    <h2 class="section-title">Core Competencies</h2>
-    <p class="section-subtitle">Technical proficiencies and operational domain expertise.</p>
+    <h2 class="section-title">Technical Expertise</h2>
+    <p class="section-subtitle">Core competencies in analytics, visualization, and process automation.</p>
     <div class="skills-grid">
       <div class="skill-card">
-        <h3>Data & BI</h3>
+        <h3>Analytics & BI Tools</h3>
+        <ul class="skill-list">
+          <li>Power BI Dashboard Design</li>
+          <li>SQL Database Querying</li>
+          <li>Python (Data Analysis)</li>
+          <li>Advanced Microsoft Excel</li>
+          <li>Google Sheets Query & Logic</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Data Management</h3>
         <ul class="skill-list">
           <li>Data Cleaning & Transformation</li>
-          <li>BI Dashboards Formulation</li>
-          <li>Data Modeling</li>
-          <li>Executive KPI Tracking</li>
-          <li>Relational Database Design</li>
+          <li>ETL Pipeline Construction</li>
+          <li>Relational Data Modeling</li>
+          <li>API Data Integration</li>
+          <li>Exploratory Data Analysis (EDA)</li>
         </ul>
       </div>
       <div class="skill-card">
-        <h3>Automation & Tools</h3>
+        <h3>Process Automation</h3>
         <ul class="skill-list">
-          <li>Google Sheets Automation</li>
           <li>Google Apps Script (GAS)</li>
-          <li>Structured Workflows</li>
-          <li>Automated Reminders</li>
+          <li>Automated Email Reporting</li>
+          <li>Trigger-based Workflows</li>
           <li>Scripted Data Pipelines</li>
+          <li>Manual Process Optimization</li>
         </ul>
       </div>
       <div class="skill-card">
-        <h3>System Design</h3>
+        <h3>Business Intelligence</h3>
         <ul class="skill-list">
-          <li>Operational Portals</li>
-          <li>Process Optimization</li>
-          <li>Scalable Workflows</li>
+          <li>KPI Design & Tracking</li>
+          <li>Financial & Fee Realization</li>
+          <li>Marketing & Lead Conversion</li>
+          <li>Cross-functional MIS Reporting</li>
           <li>Root Cause Analysis</li>
-          <li>System Integration</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Reporting & Operations</h3>
-        <ul class="skill-list">
-          <li>MIS Reporting Automation</li>
-          <li>Transport & Security Dashboards</li>
-          <li>Housekeeping Metrics</li>
-          <li>Fee Tracking & Reconciliation</li>
-          <li>Audit Trails</li>
         </ul>
       </div>
     </div>
@@ -491,142 +605,122 @@ footer {
 
 <section class="section section-surface" id="projects">
   <div class="container fade-in">
-    <h2 class="section-title">Engineering Portfolio</h2>
-    <p class="section-subtitle">A selection of operational systems, automation pipelines, and executive dashboards.</p>
+    <h2 class="section-title">Analytics & Development Portfolio</h2>
+    <p class="section-subtitle">A selection of BI dashboards, web portals, and operational reporting systems.</p>
+    
+    <div class="disclaimer-banner">
+      <strong>Note on Data Privacy:</strong> All dashboards, KPIs, and reports linked below utilize anonymized, sample datasets to protect proprietary company information and maintain absolute confidentiality.
+    </div>
+
     <div class="projects-grid">
 
       <div class="project-card">
-        <h3 class="project-title">School Operations Dashboard</h3>
-        <div class="project-meta">
-          <div class="meta-item">
-            <span class="meta-label">Problem</span>
-            <span class="meta-value">Highly fragmented tracking of transport routing, campus security protocols, and housekeeping metrics across different spreadsheets.</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Approach</span>
-            <span class="meta-value">Designed a centralized data collection schema that aggregates daily inputs into a unified reporting structure.</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Key Outcome</span>
-            <span class="meta-value">Delivered real-time operational visibility across the campus, standardizing administrative reporting.</span>
-          </div>
+        <div class="project-image">
+          <img src="project1.jpg" alt="Marketing Dashboard" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%23e2e8f0\'/></svg>'">
         </div>
-        <div class="project-tools">
-          <span class="tool-tag">Google Sheets</span>
-          <span class="tool-tag">Apps Script</span>
-          <span class="tool-tag">Dashboard Design</span>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="btn btn-secondary">View Case Study</a>
-          <a href="#" class="btn btn-primary">View Live Demo</a>
+        <div class="project-content">
+          <h3 class="project-title">Marketing & Conversion Analytics</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Sales & Telecalling (Ameyo)</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Fragmented tracking of lead walk-ins, digital campaign ROI, and counselor call performance.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Built a comprehensive Power BI model integrating call stats, disposition summaries, and CPL/CPT metrics.</span></div>
+          </div>
+          <div class="project-tools">
+            <span class="tool-tag">Power BI</span>
+            <span class="tool-tag">Data Modeling</span>
+            <span class="tool-tag">Sales KPIs</span>
+          </div>
+          <div class="project-actions">
+            <a href="Marketing_Dashboard_Sample.pdf" target="_blank" class="btn btn-secondary">View Dashboard (PDF)</a>
+          </div>
         </div>
       </div>
 
       <div class="project-card">
-        <h3 class="project-title">MIS Automation System</h3>
-        <div class="project-meta">
-          <div class="meta-item">
-            <span class="meta-label">Problem</span>
-            <span class="meta-value">High manual hours consumed weekly to aggregate, clean, and generate management information system reports.</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Approach</span>
-            <span class="meta-value">Engineered automated data extraction and transformation pipelines directly linked to source data entries.</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Key Outcome</span>
-            <span class="meta-value">Reduced weekly reporting compilation time by 90% while establishing zero manual data entry errors.</span>
-          </div>
+        <div class="project-image">
+          <img src="project2.png" alt="Operations Portal" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%23e2e8f0\'/></svg>'">
         </div>
-        <div class="project-tools">
-          <span class="tool-tag">Google Apps Script</span>
-          <span class="tool-tag">Data Transformation</span>
-          <span class="tool-tag">Process Automation</span>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="btn btn-secondary">View Case Study</a>
-          <a href="#" class="btn btn-primary">View Live Demo</a>
+        <div class="project-content">
+          <h3 class="project-title">Enterprise Operations Portal</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Administration & Logistics</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Siloed management of transport utilization, housekeeping SLAs, and security audits.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Developed a unified, interactive web application leveraging AI insights for compliance risks (e.g., bus conductor tracking).</span></div>
+          </div>
+          <div class="project-tools">
+            <span class="tool-tag">Apps Script</span>
+            <span class="tool-tag">HTML/JS</span>
+            <span class="tool-tag">Web App Deployment</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://script.google.com/a/macros/pw.live/s/AKfycbyRroujxaYQy2o-cxaFVVW81uzR7hJ5bCTa0HSiBYq6/exec" target="_blank" class="btn btn-primary">View Live Demo</a>
+          </div>
         </div>
       </div>
 
       <div class="project-card">
-        <h3 class="project-title">Inventory Tracking System</h3>
-        <div class="project-meta">
-          <div class="meta-item">
-            <span class="meta-label">Problem</span>
-            <span class="meta-value">Inefficient asset tracking leading to undocumented replacements, stockouts, and capital leakage.</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Approach</span>
-            <span class="meta-value">Developed an end-to-end operational portal for tracking the entire lifecycle of inventory items with automated alerts.</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Key Outcome</span>
-            <span class="meta-value">Established a complete digital audit trail, triggering automated low-stock warnings to procurement.</span>
-          </div>
+        <div class="project-image">
+          <img src="project3.jpg" alt="Information Portal" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%23e2e8f0\'/></svg>'">
         </div>
-        <div class="project-tools">
-          <span class="tool-tag">Workflow Design</span>
-          <span class="tool-tag">Inventory Logic</span>
-          <span class="tool-tag">Automated Reminders</span>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="btn btn-secondary">View Case Study</a>
-          <a href="#" class="btn btn-primary">View Live Demo</a>
+        <div class="project-content">
+          <h3 class="project-title">Centralized Information Portal</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Internal Communications</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Disjointed access to fee structures, academic calendars, curriculum PDFs, and standard operating procedures.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Architected a scalable internal portal serving as a single source of truth across multiple regional branches.</span></div>
+          </div>
+          <div class="project-tools">
+            <span class="tool-tag">Google Apps Script</span>
+            <span class="tool-tag">UI/UX Design</span>
+            <span class="tool-tag">Document Management</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://script.google.com/a/macros/pw.live/s/AKfycbzFJqbwmamuMFOCO6EiC6u91sps7j5jmoHHNCYhzKCe/exec" target="_blank" class="btn btn-primary">View Live Demo</a>
+          </div>
         </div>
       </div>
 
       <div class="project-card">
-        <h3 class="project-title">GAS Internal Portal</h3>
-        <div class="project-meta">
-          <div class="meta-item">
-            <span class="meta-label">Problem</span>
-            <span class="meta-value">Disjointed communication, unrecorded approvals, and workflow execution delays among internal operating teams.</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Approach</span>
-            <span class="meta-value">Built a dedicated, authenticated web application portal utilizing Google infrastructure to manage internal requests.</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Key Outcome</span>
-            <span class="meta-value">Standardized operational workflows, streamlined task allocation, and ensured accountability for internal deliverables.</span>
-          </div>
+        <div class="project-image">
+          <img src="project4.jpg" alt="Financial Dashboard" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%23e2e8f0\'/></svg>'">
         </div>
-        <div class="project-tools">
-          <span class="tool-tag">Google Apps Script</span>
-          <span class="tool-tag">HTML/CSS/JS</span>
-          <span class="tool-tag">Web App Deployment</span>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="btn btn-secondary">View Case Study</a>
-          <a href="#" class="btn btn-primary">View Live Demo</a>
+        <div class="project-content">
+          <h3 class="project-title">Financial Realization Engine</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Finance & Revenue</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Lack of immediate visibility into monthly/quarterly fee due statuses and overall collection percentages.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Engineered a dynamic tracking sheet utilizing complex queries to measure actuals vs. payables across new and old sessions.</span></div>
+          </div>
+          <div class="project-tools">
+            <span class="tool-tag">Advanced Sheets</span>
+            <span class="tool-tag">Financial KPIs</span>
+            <span class="tool-tag">Data Aggregation</span>
+          </div>
+          <div class="project-actions">
+            <a href="Finance_Dashboard_Sample.pdf" target="_blank" class="btn btn-secondary">View Case Study</a>
+          </div>
         </div>
       </div>
 
       <div class="project-card">
-        <h3 class="project-title">Executive KPI System</h3>
-        <div class="project-meta">
-          <div class="meta-item">
-            <span class="meta-label">Problem</span>
-            <span class="meta-value">Executive leadership lacked an immediate, consolidated view of critical business health metrics across silos.</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Approach</span>
-            <span class="meta-value">Designed strict data schemas for departments to input metrics, feeding into an automated top-level executive dashboard.</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Key Outcome</span>
-            <span class="meta-value">Empowered leadership with immediate, reliable data visibility to pivot from reactive firefighting to proactive strategy.</span>
-          </div>
+        <div class="project-image">
+          <img src="project5.jpg" alt="Inventory Tracker" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\'><rect width=\'100%\' height=\'100%\' fill=\'%23e2e8f0\'/></svg>'">
         </div>
-        <div class="project-tools">
-          <span class="tool-tag">BI Dashboards</span>
-          <span class="tool-tag">Data Aggregation</span>
-          <span class="tool-tag">Fee Tracking Logic</span>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="btn btn-secondary">View Case Study</a>
-          <a href="#" class="btn btn-primary">View Live Demo</a>
+        <div class="project-content">
+          <h3 class="project-title">Stock Consumption Analytics</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Domain:</span> <span class="meta-value">Procurement & Inventory</span></div>
+            <div class="meta-item"><span class="meta-label">Problem:</span> <span class="meta-value">Inefficient tracking of distributed assets leading to undocumented stockouts and capital leakage.</span></div>
+            <div class="meta-item"><span class="meta-label">Approach:</span> <span class="meta-value">Designed automated dashboards highlighting the "Lowest 20 Stocks" and mapping item-wise consumption quantities against financial value.</span></div>
+          </div>
+          <div class="project-tools">
+            <span class="tool-tag">Data Transformation</span>
+            <span class="tool-tag">Inventory Logic</span>
+            <span class="tool-tag">Visualization</span>
+          </div>
+          <div class="project-actions">
+            <a href="Stock_Dashboard_Sample.pdf" target="_blank" class="btn btn-secondary">View Case Study</a>
+          </div>
         </div>
       </div>
 
@@ -634,22 +728,55 @@ footer {
   </div>
 </section>
 
+<section class="section" id="automations">
+  <div class="container fade-in">
+    <h2 class="section-title">Micro-Automations & Scripts</h2>
+    <p class="section-subtitle">Solving everyday business bottlenecks through programmatic triggers and automated workflows.</p>
+    
+    <div class="automations-grid">
+      <div class="automation-card">
+        <div class="automation-icon">ETL</div>
+        <div class="automation-details">
+          <h4>Automated Data Pipelines</h4>
+          <p>Scripts that automatically extract, clean, and standardize raw data outputs from internal ERPs into structured datasets ready for BI consumption, eliminating daily manual pasting.</p>
+        </div>
+      </div>
+      
+      <div class="automation-card">
+        <div class="automation-icon">MIS</div>
+        <div class="automation-details">
+          <h4>Scheduled Email Reporting</h4>
+          <p>Custom Google Apps Script triggers that compile daily and weekly performance metrics (e.g., support tickets, calling audits) and dispatch formatted HTML email summaries to leadership.</p>
+        </div>
+      </div>
+      
+      <div class="automation-card">
+        <div class="automation-icon">OPS</div>
+        <div class="automation-details">
+          <h4>Ticketing & Support Triage</h4>
+          <p>Automated categorization of incoming support concerns (Academic, ERP, Transport, Infrastructure), calculating real-time resolution percentages to enforce SLAs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section-dark" id="philosophy">
   <div class="container fade-in">
     <h2 class="section-title">Architecture Philosophy</h2>
-    <p class="section-subtitle">How I design systems.</p>
+    <p class="section-subtitle">How I approach data systems.</p>
     <div class="philosophy-grid">
       <div class="philosophy-item">
-        <h3>01. Clarity</h3>
-        <p>Before writing a single line of logic, I deconstruct complex, ambiguous processes into their most fundamental, verifiable components. A system must mirror operational reality perfectly to be effective.</p>
+        <h3>01. Data Integrity</h3>
+        <p>Before writing a single line of visualization logic, I ensure the underlying pipeline is bulletproof. A dashboard is only as effective as the cleanliness and reliability of its source data.</p>
       </div>
       <div class="philosophy-item">
-        <h3>02. Automation</h3>
-        <p>Manual intervention is a point of failure. I architect pipelines that eliminate repetitive friction, applying programmatic triggers and strict validation to ensure data integrity without human effort.</p>
+        <h3>02. Automation First</h3>
+        <p>Manual intervention in reporting is a point of failure and a waste of analytical talent. I architect workflows that eliminate repetitive friction, ensuring data flows seamlessly from input to executive view.</p>
       </div>
       <div class="philosophy-item">
-        <h3>03. Scalability</h3>
-        <p>A successful architecture anticipates organizational growth. I construct data schemas and workflows that absorb increased volume gracefully, requiring minimal refactoring as operational demands expand.</p>
+        <h3>03. Actionable Clarity</h3>
+        <p>Data should answer questions, not create more. I design KPIs and interfaces that immediately highlight bottlenecks—whether in marketing spend or operational logistics—allowing leaders to pivot strategy instantly.</p>
       </div>
     </div>
   </div>
@@ -658,18 +785,18 @@ footer {
 <section class="section" id="contact">
   <div class="container fade-in contact-content">
     <h2 class="section-title">Initiate a Discussion</h2>
-    <p class="section-subtitle" style="margin: 0 auto 2rem auto;">Available for conversations regarding systems architecture, data-driven automation, and process optimization.</p>
-    <a href="mailto:ashoksinghb04@gmail.com" class="btn btn-accent">ashoksinghb04@gmail.com</a>
+    <p class="section-subtitle" style="margin: 0 auto 2rem auto;">Available for conversations regarding BI development, data-driven automation, and transitioning raw operational metrics into scalable reporting infrastructures.</p>
+    <a href="mailto:your.email@example.com" class="btn btn-accent">Contact Me</a>
     <div class="contact-links">
-      <a href="https://linkedin.com/in/ashoksingh-" target="_blank" class="btn btn-secondary">LinkedIn</a>
-      <a href="https://github.com/Ashok-750098" target="_blank" class="btn btn-secondary">GitHub</a>
+      <a href="https://linkedin.com/in/ashoksingh" target="_blank" class="btn btn-secondary">LinkedIn</a>
+      <a href="https://github.com/ashoksingh" target="_blank" class="btn btn-secondary">GitHub</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    <p>&copy; 2026 . All rights reserved. Systems & Automation Design.</p>
+    <p>&copy; 2026 Ashok Singh. All rights reserved. Data & Business Analytics.</p>
   </div>
 </footer>
 
