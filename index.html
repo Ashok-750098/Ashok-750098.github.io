@@ -51,13 +51,13 @@ ul {
 
 .container {
   width: 100%;
-  max-width: 1250px;
+  max-width: 1350px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
 .section {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
   position: relative;
 }
 
@@ -433,6 +433,8 @@ header {
   border-radius: 12px;
   padding: 2rem;
   transition: var(--transition-standard);
+  display: flex;
+  flex-direction: column;
 }
 
 .automation-card:hover {
@@ -441,7 +443,6 @@ header {
 }
 
 .automation-icon {
-  font-size: 2rem;
   color: var(--color-accent);
   margin-bottom: 1rem;
 }
@@ -525,7 +526,7 @@ footer {
   .hero-title { font-size: 2.75rem; }
   .hero-actions { flex-direction: column; }
   .project-actions { flex-direction: column; }
-  .section { padding: 5rem 0; }
+  .section { padding: 4rem 0; }
   .projects-grid { grid-template-columns: 1fr; }
   .hero-image-container { width: 280px; height: 280px; }
 }
@@ -814,26 +815,26 @@ footer {
     
     <div class="automations-grid">
       <div class="automation-card">
-        <div class="automation-icon">⚡</div>
+        <div class="automation-icon" style="font-weight: 700; font-size: 1.5rem;">ETL</div>
         <div class="automation-details">
           <h4>Automated Data Pipelines</h4>
-          <p>Scripts that automatically extract, clean, and standardize raw data outputs from internal ERPs into structured datasets ready for BI consumption, eliminating daily manual pasting.</p>
+          <p>Scripts that automatically extract, clean, and standardize raw data outputs from internal ERPs into structured datasets ready for BI consumption, eliminating daily manual pasting and data silos.</p>
         </div>
       </div>
       
       <div class="automation-card">
-        <div class="automation-icon">📧</div>
+        <div class="automation-icon" style="font-weight: 700; font-size: 1.5rem;">MIS</div>
         <div class="automation-details">
           <h4>Scheduled Email Reporting</h4>
-          <p>Custom Google Apps Script triggers that compile daily and weekly performance metrics (e.g., support tickets, calling audits) and dispatch formatted HTML email summaries to leadership.</p>
+          <p>Custom Google Apps Script triggers that compile daily and weekly performance metrics (e.g., support tickets, calling audits) and dispatch formatted HTML email summaries directly to leadership.</p>
         </div>
       </div>
       
       <div class="automation-card">
-        <div class="automation-icon">⚙️</div>
+        <div class="automation-icon" style="font-weight: 700; font-size: 1.5rem;">OPS</div>
         <div class="automation-details">
           <h4>Ticketing & Support Triage</h4>
-          <p>Automated categorization of incoming support concerns, calculating real-time resolution percentages to enforce SLAs across departments.</p>
+          <p>Automated categorization of incoming support concerns (Academic, ERP, Transport, Infrastructure), calculating real-time resolution percentages to enforce SLAs across departments.</p>
         </div>
       </div>
     </div>
@@ -846,16 +847,16 @@ footer {
     <p class="section-subtitle">How I architect systems from raw data to executive visibility.</p>
     <div class="philosophy-grid">
       <div class="philosophy-item">
-        <h3>01. Clarity</h3>
-        <p>Before writing a single line of logic, I deconstruct complex, ambiguous processes into their most fundamental, verifiable components. A system must mirror operational reality perfectly to be effective.</p>
+        <h3>01. Data Integrity</h3>
+        <p>Before writing a single line of visualization logic, I ensure the underlying pipeline is bulletproof. A dashboard is only as effective as the cleanliness and reliability of its source data.</p>
       </div>
       <div class="philosophy-item">
-        <h3>02. Automation</h3>
-        <p>Manual intervention is a point of failure. I architect pipelines that eliminate repetitive friction, applying programmatic triggers and strict validation to ensure data integrity without human effort.</p>
+        <h3>02. Automation First</h3>
+        <p>Manual intervention in reporting is a point of failure and a waste of analytical talent. I architect workflows that eliminate repetitive friction, ensuring data flows seamlessly from input to executive view.</p>
       </div>
       <div class="philosophy-item">
-        <h3>03. Scalability</h3>
-        <p>A successful architecture anticipates organizational growth. I construct data schemas and workflows that absorb increased volume gracefully, requiring minimal refactoring as operational demands expand.</p>
+        <h3>03. Actionable Clarity</h3>
+        <p>Data should answer questions, not create more. I design KPIs and interfaces that immediately highlight bottlenecks—whether in marketing spend or operational logistics—allowing leaders to pivot strategy instantly.</p>
       </div>
     </div>
   </div>
